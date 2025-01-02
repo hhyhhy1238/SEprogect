@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PersonalpPage.PersonalPageFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="53dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="239dp"
+                android:background="@color/purple_200"
+                android:rotationX="0"
+                android:rotationY="0">
+
+                <Button
+                    android:id="@+id/care_button"
+                    android:layout_width="97dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginBottom="68dp"
+                    android:text="关注：n"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.448"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar" />
+
+                <ImageView
+                    android:id="@+id/imageViewAvatar"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginEnd="220dp"
+                    android:src="@drawable/baseline_android_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.175"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.218"
+                    android:background="@drawable/circle_border"/>
+
+                <TextView
+                    android:id="@+id/nickname_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="42dp"
+                    android:text="昵称："
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewAvatar"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewAvatar"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/userName_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="42dp"
+                    android:text="用户名：\n"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewAvatar"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewAvatar"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/info_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="修改个人信息"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.657" />
+
+                <TextView
+                    android:id="@+id/birthday_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生日：2003.5.20 性别：男"
+                    app:layout_constraintBottom_toTopOf="@+id/sign_textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.159"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar"
+                    app:layout_constraintVertical_bias="0.641" />
+
+                <TextView
+                    android:id="@+id/sign_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="个性签名：Android 要我命！"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.168"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/fans_button"
+                    android:layout_width="97dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="粉丝：n"
+                    app:layout_constraintBottom_toTopOf="@+id/care_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.445"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar" />
+
+                <Button
+                    android:id="@+id/exit_button"
+                    android:layout_width="103dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="100dp"
+                    android:text="退出登录"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toBottomOf="@+id/care_button" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                app:tabIndicatorColor="@color/white"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabRippleColor="@android:color/transparent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="443dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

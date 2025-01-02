@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>科普</item>
+        <item>吐槽</item>
+        <item>生活</item>
+        <item>分享</item>
+        <item>学习</item>
+    </string-array>
+</resources>

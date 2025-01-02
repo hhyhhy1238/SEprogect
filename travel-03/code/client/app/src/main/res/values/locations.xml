@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="locations">
+        <item>八达岭长城</item>
+        <item>圆明园</item>
+        <item>颐和园</item>
+        <item>香山</item>
+        <item>奥林匹克森林公园</item>
+        <item>798艺术区</item>
+        <item>鸟巢</item>
+        <item>地坛</item>
+        <item>故宫</item>
+        <item>孔庙</item>
+        <item>雍和宫</item>
+        <item>南锣鼓巷</item>
+        <item>西单</item>
+        <item>国家博物馆</item>
+        <item>世贸</item>
+        <item>三里屯</item>
+        <item>王府井</item>
+    </string-array>
+</resources>
