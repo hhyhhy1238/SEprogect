@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Builder
 public class PostRequest {
     private String id;
+    private String planId;
     private String owner;
     private String title;
     private String content;

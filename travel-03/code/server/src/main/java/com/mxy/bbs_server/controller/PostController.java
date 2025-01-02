@@ -30,9 +30,9 @@ public class PostController {
     }
 
     @PostMapping("/addWithoutImage")
-    public PostResponse add(String id, String owner, String title, String content) throws IOException {
+    public PostResponse add(String id, String planId, String owner, String title, String content) throws IOException {
 //        System.out.println("----Debug: owner:"+owner+"  -------");
-        return postService.add(new PostRequest(id, owner, title, content, new MultipartFile[0]));
+        return postService.add(new PostRequest(id, planId, owner, title, content, new MultipartFile[0]));
     }
 
     @PostMapping("/query")
@@ -42,7 +42,7 @@ public class PostController {
 
     @GetMapping("/query/{postId}")
     public PostResponse query(@PathVariable("postId") String postId) {
-        return postService.query(new PostRequest(postId, "", "", "", null));
+        return postService.query(new PostRequest(postId, "","", "", "", null));
     }
 
     @GetMapping("/queryFavorNum/{postId}")

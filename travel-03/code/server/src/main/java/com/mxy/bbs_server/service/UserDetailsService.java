@@ -25,12 +25,13 @@ public class UserDetailsService {
         UserDetails details=userDetailsMapper.getUserDetailByUsername(userDetailsRequest.getUsername());
         //System.out.println(details);
 
-        final var avatar = Utility.savePostImages(userDetailsRequest.getAvatar(), userDetailsRequest.getUsername());
+//        final var avatar = Utility.savePostImages(userDetailsRequest.getAvatar(), userDetailsRequest.getUsername());
+        String defaultAvatarUrl = "http://354174c9.r25.cpolar.top/ImageResource/avatars/default.png";
 
         var OlduserInfo=userInfoMapper.queryByUsername(userDetailsRequest.getUsername());
         userDetailsMapper.updateUserDetailsByUsername(new UserDetails(userDetailsRequest.getUsername(), userDetailsRequest.getGender(),userDetailsRequest.getBirthday(), details.getRegisterTime(),userDetailsRequest.getSignature()));
         userInfoMapper.update(new UserInfoData(userDetailsRequest.getUsername(),userDetailsRequest.getNickname(),
-               null, Utility.toJson(avatar),OlduserInfo.getMyPosts(), OlduserInfo.getMyCollections()));
+               null, defaultAvatarUrl,OlduserInfo.getMyPosts(), OlduserInfo.getMyCollections()));
         return new UserDetailsResponse(true);
     }
 

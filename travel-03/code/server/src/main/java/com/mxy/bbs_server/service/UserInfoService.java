@@ -41,12 +41,12 @@ public class UserInfoService {
         if (userInfoMapper.query(userInfoToQuery) == null) {
             return new UserInfoResponse(false, UserInfoResponseFailedReason.USERNAME_DOES_NOT_EXIST, null);
         }
-        final var avatar = Utility.saveAvatar(userInfoRequest.getAvatar(), userInfoRequest.getUsername());
+//        final var avatar = Utility.saveAvatar(userInfoRequest.getAvatar(), userInfoRequest.getUsername());
+        String defaultAvatarUrl = "http://354174c9.r25.cpolar.top/ImageResource/avatars/default.png";
         final var previousUserInfo = userInfoMapper.query(userInfoToQuery);
-        userInfoMapper.update(new UserInfoData(userInfoRequest.getUsername(), userInfoRequest.getNickname(), userInfoRequest.getPersonalSign(), avatar, previousUserInfo.getMyPosts(), previousUserInfo.getMyCollections()));
+        userInfoMapper.update(new UserInfoData(userInfoRequest.getUsername(), userInfoRequest.getNickname(), userInfoRequest.getPersonalSign(), defaultAvatarUrl, previousUserInfo.getMyPosts(), previousUserInfo.getMyCollections()));
         final var userInfoRes = userInfoMapper.query(userInfoToQuery);
-        // 暂时返回默认头像,不设置上传头像功能
-        String defaultAvatarUrl = "/ImageResource/avatars/default.png";
+
         return new UserInfoResponse(true, null, new UserInfo(userInfoRes.getUsername(),
                 userInfoRes.getNickname(),
                 userInfoRes.getPersonalSign(),
@@ -81,8 +81,8 @@ public class UserInfoService {
         }
         User check = userMapper.query(user);
         String p4wd = user.getPassword();
-        System.out.println(check.toString());
-        System.out.println(p4wd);
+//        System.out.println(check.toString());
+//        System.out.println(p4wd);
 
         if (!(p4wd.equals(check.getPassword()))) {
             //System.out.println("密码错误!");

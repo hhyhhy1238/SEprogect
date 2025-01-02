@@ -59,6 +59,7 @@ public class UserService {
             log.info(e.getMessage());
         }
         String default_avatar_url=properties.getProperty("default_avatar_url");
+
         userInfoMapper.add(new UserInfoData(
                 user.getUsername(),
                 Const.DEFAULT_NICKNAME,
@@ -68,6 +69,7 @@ public class UserService {
                 Utility.toJson(Const.DEFAULT_POSTS),
                 Utility.toJson(Const.DEFAULT_COLLECTIONS))
         );
+
         //System.out.println("add1 run");
         likeOrNotMapper.add(user.getUsername());
         //System.out.println("add1finished");

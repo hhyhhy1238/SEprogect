@@ -18,15 +18,15 @@ public class Utility {
     public static String saveAvatar(MultipartFile avatar, String username) throws IOException {
         Properties properties=new Properties();
         properties.load(Resources.getResourceAsStream("resourceLocations.properties"));
-        String Avatar_location=properties.getProperty("Avatar_location");
-        //final var targetAvatar = new File("./avatars/" + username + "/" + avatar.getOriginalFilename());
-        final var targetAvatar = new File(Avatar_location + username + "/" + avatar.getOriginalFilename());
+        String avatarLocalLocation=properties.getProperty("Avatar_local_location");
+        String avatarWebLocation=properties.getProperty("Avatar_web_location");
 
-        String tempUrl=(Avatar_location + username + "/" + avatar.getOriginalFilename()).substring(1);
+        final var targetAvatar = new File(avatarLocalLocation + username + "/" + avatar.getOriginalFilename());
 
+        String webUrl=(avatarWebLocation + username + "/" + avatar.getOriginalFilename()).substring(1);
 
         FileUtils.copyInputStreamToFile(avatar.getInputStream(), targetAvatar);
-        return NginxHelper.getAbsoluteUrl(tempUrl);
+        return NginxHelper.getAbsoluteUrl(webUrl);
     }
 
     public static List<String> savePostImages(MultipartFile[] images, String postId) throws IOException {

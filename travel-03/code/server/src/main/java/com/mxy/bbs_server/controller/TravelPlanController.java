@@ -21,9 +21,4 @@ public class TravelPlanController {
     public TravelPlanResponse queryTravelPlan(@RequestBody TravelPlan travelPlan){
         return travelPlanService.query(travelPlan);
     }
-
-//    @PostMapping("/add")
-//    public TravelPlanUserResponse addTravelPlan(@RequestBody TravelPlanUser travelPlanUser){
-//        return travelPlanService.add(travelPlanUser);
-//    }
 }

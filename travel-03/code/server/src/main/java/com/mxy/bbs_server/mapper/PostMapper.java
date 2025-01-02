@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface PostMapper  {
 
-    @Insert("insert into Post (id, date, owner, title, content, images, likeNum, reviews) values (#{id}, #{date}, #{owner}, #{title}, #{content}, #{images}, #{likeNum}, #{reviews})")
+    @Insert("insert into Post (id, locations, date, owner, title, content, images, likeNum, reviews) values (#{id}, #{locations}, #{date}, #{owner}, #{title}, #{content}, #{images}, #{likeNum}, #{reviews})")
     void add(PostData post);
 
     @Select("select * from Post where id = #{id}")

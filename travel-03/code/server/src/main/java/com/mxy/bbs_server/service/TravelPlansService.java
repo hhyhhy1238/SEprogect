@@ -30,7 +30,6 @@ public class TravelPlansService {
         String id = String.valueOf(random.nextInt());
 
         TravelPlanDetails travelPlanDetails = new TravelPlanDetails(id,travelMapService.findShortestPath(travelPlan));
-//        System.out.println("----DEBUG:travelPlanMapper.addPlan() :: " + travelPlanDetails.getId() + travelPlanDetails.getLocations());
 
         travelPlansMapper.addPlan(
                 new TravelPlanDetailsData(id,

@@ -11,6 +11,7 @@ import java.util.List;
 @Builder
 public class PostData {
     private String id;
+    private String locations;
     private String date;
     private String owner;
     private String title;
